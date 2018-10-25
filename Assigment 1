@@ -1,0 +1,30 @@
+#include "pch.h"
+#include <iostream>
+#include <stdio.h>
+
+int b;
+int i = 435678878;
+int* p1= &i;
+long l1 = 98237847927492;
+long* p2 = &l1;
+double d1 = 1337.00;
+double* p3 = &d1;
+char c = 's';
+char* p4 = &c;
+char** p5 = &p4;
+
+int main(int arg, char* argc[]) {
+	printf("Question 1\n");
+	printf("Size of int: %d bytes\n", sizeof(b));
+	printf("Size of int*: %d bytes\n", sizeof(*p1));
+	printf("Size of long*: %d bytes\n", sizeof(*p2));
+	printf("Size of double*: %d bytes\n", sizeof(*p3));
+	printf("Size of char**: %d bytes\n", sizeof(**p5));
+	
+	return 0;
+}
+
+//Comments on results:
+//Results for this are as you'd expect as ints, int*, and longs are typically 4 bytes on x64 machine
+//double returns 8 bytes also as expected as they also take up 8 bytes of memory on a x64 machine
+//and finally the char is one byte which is also true as they only occupy 1 byte of space
